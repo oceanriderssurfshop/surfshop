@@ -5,9 +5,17 @@ Date: 20/11/2025
 File: main_pb.js
 */
 
+// Hamburger Menu Logic
+    const hamburger = document.querySelector('.hamburger-menu');
+    const nav = document.querySelector('.site-nav');
+
+    if (hamburger && nav) {
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+}
 
 // WEATHER WIDGET
-
 
 // Get the HTML element where the weather info will be displayed
 const weatherBox = document.getElementById("weatherBox");
@@ -38,7 +46,6 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=52.93&longitude=-9.35&cur
 
 // WAVE CONDITIONS METER
 
-
 // Get the HTML element where the surf conditions will be displayed
 const conditionsBox = document.getElementById("wave-conditions-box");
 
@@ -57,9 +64,8 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=52.93&longitude=-9.35&cur
     let conditionsText = "";
     let emoji = "";
 
-    // -----------------------------------------
+
     // Wave condition logic based on wind speed
-    // -----------------------------------------
 
     // Calm conditions = great surfing
     if (wind <= 12) {
