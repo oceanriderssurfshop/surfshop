@@ -1,0 +1,205 @@
+<!--Author: Rosalind Barrett
+    Student ID: 25115642-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book surf lessons at Ocean Riders in Lahinch. Whether you are a beginner or looking for advanced coaching from pros like Kelly Slater, we have a program for you.">
+	
+	<title>Lessons | Ocean Riders</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style/rosiestyle.css"/>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="site-header-inner">
+            <div class="site-brand">
+                <a href="../index.html">
+					<!--logo created by Google Gemini-->
+					<img src="../pictures/logo.png" alt="Ocean Riders Logo" class="site-brand-logo">
+					<h1 class="site-brand-title">Ocean Riders<br>Surf Shop</h1>
+				</a>
+			</div>
+
+			<button class="hamburger-menu">☰</button>
+
+            <nav class="site-nav">
+                <a href="../index.html">Home</a>
+                <a href="../brands/brands.html">Brands</a>
+                <a href="lessons.html" class="active">Lessons</a>
+                <a href="../about/about.html">About</a>
+                <a href="../contact/contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-shell">
+        
+        <section class="hero">
+            <img src="../pictures/dog.png" alt="Surfing Dog" class="hero-img">
+            <div class="hero-content">
+                We can teach you some new tricks.
+            </div>
+        </section>
+
+		<section class="mb-5">
+            <h2 class="section-heading">Our Lesson Programs</h2>
+            
+            <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <div class="r-card">
+                        <!--image from Pexels.com-->
+						<img src="../pictures/beginner.png" alt="Beginner surf lesson" class="r-card-media">
+                        <h3 class="r-card-title">Beginners</h3>
+                        <p class="r-card-detail">Learn the fundamentals of surfing, focusing on water safety, board control, and mastering the pop-up to ride your first whitewater waves toward the shore.</p>
+                        <button class="r-button-primary book-btn" data-lesson="Beginner Lesson">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="r-card">
+                        <!--image from Pexels.com-->
+						<img src="../pictures/interm.png" alt="Intermediate surf lesson" class="r-card-media">
+                        <h3 class="r-card-title">Intermediate</h3>
+                        <p class="r-card-detail">We progress beyond the broken waves by learning wave timing, paddling out efficiently, and steering the board to ride unbroken green waves parallel to the beach.</p>
+                        <button class="r-button-primary book-btn" data-lesson="Intermediate Lesson">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="r-card">
+                        <!--image from Pexels.com-->
+						<img src="../pictures/advanced.png" alt="Advanced surf lesson" class="r-card-media">
+                        <h3 class="r-card-title">Advanced</h3>
+                        <p class="r-card-detail">Master high-performance maneuvers, speed generation, and ocean reading skills in powerful swell conditions to prepare for competitive surfing or large-wave expertise.</p>
+                        <button class="r-button-primary book-btn" data-lesson="Advanced Lesson">Book Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <section class="mb-5">
+            <h2 class="section-heading">Meet The Trainers</h2>
+            <div class="row g-4">   
+                
+                <div class="col-md-4">
+                    <div class="r-card r-card-team">
+                        <!--image from Pexels.com-->
+						<img src="../pictures/womensurfer.png" alt="Jessie, Beginner Instructor" class="r-card-media">
+                        <h3 class="r-card-title">Jessie James</h3>
+                        <p class="r-card-detail">Jessie's calm patience and expertise in small wave mechanics make her the ideal instructor for first-time surfers. Both children and adults love learning from her.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="r-card r-card-team">
+                        <!--image from Pexels.com-->
+						<img src="../pictures/intmale.png" alt="Alex, Intermediate Instructor" class="r-card-media">
+                        <h3 class="r-card-title">Alex Rico</h3>
+                        <p class="r-card-detail">Alex is uniquely suited for intermediate surfers because of his focus on helping students transition from whitewater to confidently riding unbroken green waves.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="r-card r-card-team">
+                        <!--image from trimyourlifeaway.com-->
+						<img src="../pictures/kellyslater.png" alt="Kelly S., Advanced Instructor" class="r-card-media">
+                        <h3 class="r-card-title">Kelly Slater</h3>
+                        <p class="r-card-detail">Kelly has won a record 11 World Championship Tour titles and 56 elite event victories. The perfect fit for our Advanced Trainer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+		<section class="form-section"> <div class="container" style="max-width: 700px;">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold">Ready to Get Started?</h2>
+                    <p class="fw-bold text-blue">Send us a message to book your first lesson</p>
+                </div>
+            
+                <form class="r-form">
+                    <div class="mb-3">
+                        <label for="name" class="r-form-label">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" class="r-form-input">
+                        <div id="nameError" class="text-danger small"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="r-form-label">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" class="r-form-input">
+                        <div id="emailError" class="text-danger small"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="r-form-label">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="I'm interested in the Beginner program..." class="r-form-input"></textarea>
+                        <div id="messageError" class="text-danger small"></div>
+                    </div>
+
+                    <button type="submit" class="r-button-primary">Send Inquiry</button>
+                </form>
+            </div>
+        </section>
+
+		<section class="mb-5">
+            <h2 class="section-heading">Our Associations</h2>
+            
+            <div class="r-super-card">
+                <div class="row g-4 align-items-center justify-content-center">
+                    
+                    <div class="col-6 col-md-3">
+                        <a href="https://www.youtube.com/watch?v=eI0JBvEAa94" target="_blank">
+                            <img src="../pictures/billabong.png" alt="Billabong" class="r-logo-badge">
+                        </a>
+                    </div>
+                    
+                    <div class="col-6 col-md-3">
+                        <a href="https://www.irishsurfing.ie" target="_blank">
+                            <img src="../pictures/irishsurf.png" alt="Irish Surfing" class="r-logo-badge">
+                        </a>
+                    </div>
+                    
+                    <div class="col-6 col-md-3">
+                        <a href="https://www.eurosurfing.org" target="_blank">
+                            <img src="../pictures/eurosurf.png" alt="European Surfing" class="r-logo-badge">
+                        </a>
+                    </div>
+                    
+                    <div class="col-6 col-md-3">
+                        <a href="https://isasurf.org" target="_blank">
+                            <img src="../pictures/intsurf.png" alt="International Surfing" class="r-logo-badge">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Ocean Riders Surf Shop | Lahinch, Co. Clare</p>
+		<p>
+			<a href="footer/privacy.html">Privacy</a> |
+			<a href="footer/cookies.html">Cookies</a> |
+			<a href="footer/terms.html">Terms of Use</a>
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javaScript/jscript.js"></script>
+
+</body>
+</html>

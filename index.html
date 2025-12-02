@@ -1,0 +1,224 @@
+/*
+Name: Pedro Baron
+Student Number: x12127400
+Date: 20/11/2025
+File: index.html
+*/
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta description used by search engines -->
+    <meta name="description" content="Ocean Riders Surf Shop in Lahinch offers premium surfboards, wetsuits, lessons, rentals, and top surf brands. Get expert local advice, check today’s wave conditions, and shop our featured surf gear. Catch your next wave with us!">
+
+    <!-- Page title shown in browser tab -->
+    <title>Ocean Riders Surf Shop</title>
+
+    <!-- Makes the website responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS for layout and components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS bundle (includes popper.js for modals, dropdowns, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main unified CSS file for the whole site -->
+    <link rel="stylesheet" href="style/main.css">
+
+    <!-- Main JavaScript file (defer = load after HTML finishes loading) -->
+    <script src="javaScript/main_pb.js" defer></script>
+
+    <!-- Google Fonts: Trade Winds (header logo font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    
+    <!-- HEADER SECTION (Logo + Navigation Menu)                  -->
+    
+    <header class="site-header">
+      <div class="site-header-inner">
+
+        <!-- Left side: logo + title -->
+        <div class="site-brand">
+          <img src="pictures/logo.png" alt="Ocean Riders Logo" class="site-brand-logo">
+          <h1 class="site-brand-title">Ocean Riders<br>Surf Shop</h1>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="site-nav">
+          <!-- Highlight current page with .active -->
+          <a href="index.html" class="active">Home</a>
+          <a href="brands/brands.html">Brands</a>
+          <a href="lessons/lessons.html">Lessons</a>
+          <a href="about/about.html">About</a>
+          <a href="contact/contact.html">Contact</a>
+        </nav>
+
+      </div>
+    </header>
+
+    
+    <!-- MAIN CONTENT CONTAINER                                    -->
+    
+    <main class="site-shell">
+
+      
+      <!-- HERO SECTION Big background + slogan -->
+      
+      <section class="hero">
+        <img src="pictures/surf_hero.png" alt="Surf Image" class="hero-img">
+
+        <!-- Hero text overlay -->
+        <div class="hero-content">
+          Catch your next wave with the best surf gear, lessons, and local knowledge in Lahinch.
+        </div>
+      </section>
+
+      <!-- FEATURE CARDS (Why Us / Lessons / Rentals)                -->
+      
+      <section class="section">
+        <div class="row g-4 text-center">
+
+          <!-- Card 1 -->
+          <div class="col-md-4">
+            <div class="card-surface">
+              <img src="pictures/clothes.jpg" class="card-image" alt="Clothes">
+              <h5 class="card-title">Why Ocean Riders?</h5>
+              <p class="card-text">
+                Local expert crew, premium brands and honest advice for every level of surfer.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-4">
+            <div class="card-surface">
+              <img src="pictures/surfer.png" class="card-image" alt="Surfer">
+              <h5 class="card-title">Surf Lessons</h5>
+              <p class="card-text">
+                Safe, fun lessons for beginners to advanced surfers with certified coaches.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-4">
+            <div class="card-surface">
+              <img src="pictures/lessons.jpg" class="card-image" alt="Lessons">
+              <h5 class="card-title">Shop & Rentals</h5>
+              <p class="card-text">
+                Boards, wetsuits and accessories ready to rent or buy – all in one place.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      
+      <!-- FEATURED PRODUCTS (Linking to Brands Page Modals)         -->
+
+      <section class="section">
+        <h2 class="section-title">Featured Products</h2>
+
+        <div class="row g-4">
+
+          <!-- Product 1 -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <!-- Link that loads correct modal on brands page -->
+            <a href="brands/brands.html?modal=modal1" class="product-link">
+              <div class="product-card">
+                <img src="pictures/wave-warrior-4.jpg" alt="Soft-Top Beginner Board">
+                <h5>Wave Warrior Products</h5>
+                <p class="price">From €12.99</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <a href="brands/brands.html?modal=modal5" class="product-link">
+              <div class="product-card">
+                <img src="pictures/current-chasers-rashguard.jpg" alt="Premium Wetsuit 4/3mm">
+                <h5>Current Chasers Products</h5>
+                <p class="price">From €79.00</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <a href="brands/brands.html?modal=modal4" class="product-link">
+              <div class="product-card">
+                <img src="pictures/swell-seeker-4.jpg" alt="Twin Fin Fish Board">
+                <h5>Swell Seeker Products</h5>
+                <p class="price">From €629.00</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <a href="brands/brands.html?modal=modal2" class="product-link">
+              <div class="product-card">
+                <img src="pictures/tide-turner-1.jpg" alt="Kids Foam Board Package">
+                <h5>Tide Turner Products</h5>
+                <p class="price">From €29.00</p>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    
+    <!-- WAVE CONDITIONS SECTION  -Populated dynamically by JS (API-based) -->
+    
+    <section class="section">
+      <h2 class="section-title">Today's Wave Conditions</h2>
+      <div class="card-surface text-center" id="wave-conditions-box">
+        <!-- Default text while data loads -->
+        <p style="margin-bottom: 0.5rem;">Loading surf conditions...</p>
+      </div>
+    </section>
+
+    
+    <!-- WEATHER WIDGET (Temperature + Wind) Also updated by JavaScript API calls  -->
+
+    <div class="weather-widget">
+      <div class="card shadow">
+        <div class="card-body text-center p-2">
+          <h6 class="mb-1 fw-bold">🌤 Lahinch Surf</h6>
+
+          <!-- Filled dynamically by JS -->
+          <div id="weatherBox">Loading...</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- FOOTER SECTION (Copyright + Links)                        -->
+    
+    <footer class="site-footer">
+      <p>© 2025 Ocean Riders Surf Shop</p>
+
+      <!-- Footer navigation (legal pages) -->
+      <p>
+        <a href="footer/privacy.html">Privacy</a> |
+        <a href="footer/cookies.html">Cookies</a> |
+        <a href="footer/terms.html">Terms of Use</a>
+      </p>
+
+      <!-- Project credits -->
+      <p>Website made by Rosalin, Cian and Pedro</p>
+    </footer>
+
+  </body>
+</html>

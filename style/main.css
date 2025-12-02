@@ -1,0 +1,614 @@
+/* OCEAN RIDERS - MAIN STYLES
+   Maintained by: Pedro, Cian and Rosalind
+   This file handles the stuff that appears on every page (Header, Footer, Fonts).
+*/
+
+/* Ideally, we should only change colors here, and it updates everywhere */
+:root {
+    --or-blue: #1f4c75;         /* Main brand blue */
+    --or-blue-dark: #163552;    /* Darker blue for text/headings */
+    --or-orange: #e48e41;       /* Main accent orange */
+    --or-orange-light: #fc9c60; /* Lighter orange for gradients */
+    --or-white: #ffffff;
+    --or-text: #1f2933;         /* Standard body text color */
+
+    /* Rounded corners settings */
+    --or-radius-sm: 0.5rem;
+    --or-radius-lg: 0.75rem;
+    --or-radius-xl: 1.5rem;
+
+    /* Shadow effects for 3D look */
+    --or-shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+    --or-shadow-card: 0 8px 12px -4px rgba(0, 0, 0, 0.18);
+}
+
+/* --- BASIC SETUP --- */
+/* Make sure padding doesn't make boxes bigger than they should be */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling when clicking anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Default body look */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif; /* Standard clean font */
+    color: var(--or-text);
+    background-color: var(--or-blue); /* The blue background seen on sides */
+}
+
+/* --- LAYOUT HELPERS --- */
+/* This is the container that keeps content centered and not too wide */
+.site-shell {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1.25rem 1.25rem 3rem;
+}
+
+/* Headings (h1, h2, etc) styling */
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    font-weight: 800;
+    color: var(--or-blue-dark);
+}
+
+/* Paragraph spacing */
+p {
+    margin: 0 0 0.75rem;
+    line-height: 1.5;
+}
+
+/* Simple center align helper */
+.text-center {
+    text-align: center;
+}
+
+/* --- LINKS --- */
+a {
+    color: var(--or-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- HEADER & NAVIGATION --- */
+.site-header {
+    /* Orange gradient background */
+    background: linear-gradient(90deg, var(--or-orange) 0%, var(--or-orange-light) 100%);
+    border-radius: 0 0 var(--or-radius-xl) var(--or-radius-xl);
+    box-shadow: 0 8px 16px rgba(22, 53, 82, 0.35);
+    position: sticky; /* Sticks to top when scrolling */
+    top: 0;
+    z-index: 50; /* Stays on top of other elements */
+}
+
+.site-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Logo area */
+.site-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.site-brand a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.site-brand-logo {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 999px; /* Makes it a perfect circle */
+    background-color: var(--or-white);
+    object-fit: cover;
+    box-shadow: var(--or-shadow-card);
+}
+
+.site-brand-title {
+    font-family: "Trade Winds", system-ui, sans-serif; /* The pirate/surf font */
+    font-size: 1.7rem;
+    line-height: 1.1;
+}
+
+/* The Menu Links */
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.4rem 0.8rem;
+    width: 100%;
+}
+
+.site-nav a {
+    color: var(--or-blue-dark);
+    font-weight: 600;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    transition: 0.2s ease; /* Smooth hover effect */
+}
+
+.site-nav a:hover {
+    background-color: rgba(255,255,255,0.85);
+    transform: translateY(-1px); /* Moves up slightly */
+}
+
+.site-nav a.active {
+    background-color: var(--or-blue-dark);
+    color: var(--or-white);
+}
+
+/* --- HERO SECTION (Big Image Banner) --- */
+.hero {
+    position: relative;
+    margin: 2rem 0 2.5rem;
+    border-radius: var(--or-radius-xl);
+    overflow: hidden; /* Cuts off image corners */
+    box-shadow: var(--or-shadow-soft);
+    background-color: var(--or-blue-dark);
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark overlay so text is readable over the image */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(31,76,117,0.4), rgba(0,0,0,0.55));
+    z-index: 1;
+}
+
+.hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem 2rem;
+    max-width: 75%;
+    text-align: center;
+    color: var(--or-white);
+    font-size: 1.7rem;
+    font-weight: 800;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+
+/* --- GENERIC SECTION STYLES --- */
+.section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.1rem;
+    margin-bottom: 2rem;
+    color: var(--or-orange-light);
+}
+
+/* --- CARD STYLES --- */
+
+/* 1. Standard White Card (Used in About/Lessons) */
+.card-surface {
+    background-color: var(--or-white);
+    border-radius: var(--or-radius-lg);
+    padding: 1.25rem;
+    box-shadow: var(--or-shadow-card);
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.card-surface:hover {
+    transform: translateY(-4px); /* Lifts up on hover */
+}
+
+.card-image {
+    width: 100%;
+    height: 190px;       
+    object-fit: cover;    
+    border-radius: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--or-orange);
+    margin-bottom: 0.4rem;
+}
+
+.card-text {
+    font-size: 0.98rem;
+    color: var(--or-blue);
+}
+
+/* 2. Product Card (Used in Index) */
+.product-card {
+    background-color: var(--or-white);
+    border-radius: var(--or-radius-lg);
+    box-shadow: var(--or-shadow-card);
+    padding: 1rem;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: var(--or-radius-sm);
+    margin-bottom: 0.6rem;
+}
+
+.product-card h5 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--or-blue-dark);
+    margin-bottom: 0.25rem;
+}
+
+.product-card .price {
+    font-weight: 700;
+    color: var(--or-orange);
+}
+
+/* 3. Brand Card (Used in Brands - Cians Page) */
+.brand-card {
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    background-color: var(--or-white);
+    box-shadow: var(--or-shadow-card);
+    text-align: center;
+    height: 260px; /* Fixed height so they line up */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+.brand-card img {
+    width: 100%;
+    height: 140px;          
+    object-fit: contain; /* Ensures logo isn't cut off */
+    margin-bottom: 1rem;
+}
+
+/* --- FORMS (Contact & Lessons) --- */
+.form-section {
+    background-color: var(--or-orange);
+    padding: 2.5rem 1.5rem 3rem;
+    border-radius: var(--or-radius-xl);
+    box-shadow: var(--or-shadow-soft);
+}
+
+.form-wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.form {
+    background-color: var(--or-white);
+    padding: 1.75rem;
+    border-radius: var(--or-radius-lg);
+    box-shadow: var(--or-shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--or-blue-dark);
+}
+
+.form-input {
+    padding: 0.75rem;
+    border-radius: var(--or-radius-sm);
+    border: 1px solid var(--or-blue);
+    font: inherit;
+    resize: vertical; /* Allows resizing text area vertically only */
+}
+
+.form-input:focus {
+    outline: 2px solid var(--or-blue);
+}
+
+/* --- BUTTONS --- */
+.button-primary {
+    background-color: var(--or-blue-dark);
+    color: var(--or-white);
+    border-radius: var(--or-radius-sm);
+    border: 2px solid var(--or-orange);
+    padding: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.button-primary:hover {
+    background-color: var(--or-orange);
+    color: var(--or-blue-dark);
+}
+
+/* --- FOOTER --- */
+.site-footer {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--or-white);
+}
+
+.site-footer a {
+    color: var(--or-white);
+    font-weight: 500;
+}
+
+.site-footer a:hover {
+    color: var(--or-orange-light);
+}
+
+/* --- RESPONSIVE RULES (Mobile vs Desktop) --- */
+/* 1. MOBILE QUERY (min-width: 320px) */
+@media (min-width: 320px) {
+    .site-header-inner {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between;
+        align-items: center;
+    }
+ 
+    .hamburger-menu {
+        display: block; 
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #1f4c75;
+        padding: 5px;
+    }
+ 
+    .site-nav {
+        display: none; 
+        width: 100%; 
+        margin-top: 1rem;
+        text-align: center;
+    }
+ 
+    .site-nav.active {
+        display: block;
+    }
+ 
+    .site-nav a {
+        display: block; 
+        margin-bottom: 0.5rem;
+    }
+}
+ 
+@media (min-width: 640px) {
+    /* On Tablets +: Header becomes horizontal */
+    .hamburger-menu {
+        display: none; 
+    }
+ 
+    .site-nav {
+        display: flex !important;
+        flex-direction: row;    
+        flex-wrap: nowrap;        
+       width: 100%;
+		justify-content:flex-end;
+		align-items: center;      
+       margin-top: 0;
+        gap: 0.5rem;             
+    }
+ 
+    .site-nav a {
+        display: inline-block;
+        margin-bottom: 0;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.95rem;     
+        white-space: nowrap;     
+    }
+    .site-header-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;       
+        align-items: center;
+    }
+    .site-brand-logo {
+        width: 4.2rem;
+        height: 4.2rem;
+    }
+ 
+    .site-brand-title {
+        font-size: 2rem;
+    }
+ 
+    .hero {
+        min-height: 320px;
+    }
+}
+ 
+@media (min-width: 992px) {
+    /* On Desktop: Adjust spacing and hero size */
+    .site-shell {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+ 
+    .hero {
+        min-height: 380px;
+    }
+ 
+    .hero-content {
+        font-size: 2.1rem;
+        max-width: 60%;
+    }
+}
+
+/* Cian */
+
+/*  MODAL STYLES (for Brands page) */
+
+/* Modal Overlay - dark background that covers the page */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal Content Box - the white popup box */
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border: 2px solid #787878;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Close Button - X symbol in top-right corner */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #787878;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--or-orange);
+}
+
+/* Modal title */
+.modal-content h2 {
+    color: var(--or-blue-dark);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Modal body content */
+.modal-body {
+    text-align: center;
+    color: #787878;
+}
+
+/* Product images in modals */
+.product-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 2px solid #e0e0e0;
+}
+
+/* Product name styling */
+.product-name {
+    color: var(--or-blue-dark);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Product price styling */
+.product-price {
+    color: var(--or-orange);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Product description */
+.product-description {
+    color: #787878;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* FILTER BUTTONS (for Brands page)*/
+
+/* Filter button styling */
+.filter-btn {
+    background-color: var(--or-blue-dark);
+    color: var(--or-white);
+    border: 2px solid var(--or-orange);
+    border-radius: var(--or-radius-sm);
+    padding: 0.75rem 1.5rem;
+    margin: 0.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--or-orange);
+    color: var(--or-blue-dark);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: var(--or-orange);
+    color: var(--or-blue-dark);
+}
+
+/* FOOTER */
+
+/* Footer Styling */
+.footer {
+	background-color: #1f4c75;
+	color: white;
+	text-align: center;
+	padding: 30px 0;
+	margin-top: 50px;
+}
+ 
+.footer p {
+	margin: 0;
+	font-size: 1rem;
+}

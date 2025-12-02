@@ -1,0 +1,553 @@
+/* Author: Rosalind Barrett
+   Student ID: 25115642 */
+
+
+/* I used variables here for my main colors and fonts. 
+   This is good for maintenance as if I want to change the colours or fonts later, 
+   I only have to do it here, and it updates everywhere. */
+:root {
+    --or-blue: #1f4c75;
+    --or-orange: #e48e41;
+    --or-white: #ffffff;
+    --font-heading: "Trade Winds", system-ui, sans-serif;
+    --font-body: system-ui, -apple-system, sans-serif;
+}
+
+/* box-sizing: border-box makes sure that padding and borders are included 
+   in the total width. This stops elements from getting too big and breaking the layout. */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Whole page background color, text color, and font family. */
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--or-blue);
+    background-color: var(--or-blue);
+}
+
+/* Base style for links. */
+a {
+    text-decoration: none;
+    color: var(--or-blue);
+    transition: 0.2s;
+}
+
+/* Below adds a clear outline when using the "Tab" key.
+   It helps people who use keyboards instead of a mouse to see where they are on the page. 
+   https://www.w3schools.com/accessibility/accessibility_visual_focus.php*/
+a:focus, button:focus {
+    outline: 3px solid var(--or-white);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Hover effect for links so the user knows the text is clickable. */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Heading styling. */
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    font-weight: 800;
+    color: var(--or-blue);
+}
+
+/* Paragraph styling. */
+p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+
+/* HEADER & NAVIGATION */
+
+/* Main container for the top navigation bar.
+   Sticky positioning keeps the menu at the top of the screen while the user scrolls down. */
+.site-header {
+    background: var(--or-orange);
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 8px 16px rgba(22, 53, 82, 0.35);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+}
+
+/* Inner wrapper for header content. */
+.site-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Container for the brand logo and title text. */
+.site-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Company Logo. */
+.site-brand-logo {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 999px;
+    background-color: var(--or-white);
+    object-fit: cover;
+    box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.18);
+}
+
+/* Using Flexbox here groups the logo and text together so the whole area is clickable. */
+.site-brand a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+/* "Trade Winds" font used here for company name. */
+.site-brand-title {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    line-height: 1.1;
+    color: var(--or-blue);
+}
+
+/* Flex container for the navigation links. Flex-wrap stops the links from getting cut off 
+   if the screen is too small. */
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.4rem 0.8rem;
+    width: 100%;
+}
+
+/* Individual navigation links. */
+.site-nav a {
+    color: var(--or-blue);
+    font-weight: 600;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+/* Hover effect for navigation links. */
+.site-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    transform: translateY(-1px);
+}
+
+/* Shows the user which page they are currently on. */
+.site-nav a.active {
+    background-color: var(--or-blue);
+    color: var(--or-white);
+}
+
+
+/* HERO SECTION */
+
+/* The main banner image area. */
+.hero {
+    position: relative;
+    margin: 2rem 0 3rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+    background-color: var(--or-blue);
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Pseudo-element (creates the semi-transparent orange overlay on top of the hero image.)
+   This makes the blue text much easier to read against the photo. */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(228, 142, 65, 0.6); 
+    z-index: 1;
+}
+
+/* Hero background image (covers the full container). */
+.hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text sitting on top of the hero image and overlay. */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 1.15rem;
+    text-align: center;
+    color: var(--or-blue);
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+
+/* MAIN LAYOUT & SECTIONS */
+
+/* This wrapper keeps all the main content centered on large screens. */
+.site-shell {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1.25rem;
+}
+
+/* Section headings (e.g., "Our Trainers", "Lesson Plans"). */
+.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--or-orange);
+    font-weight: 800;
+}
+
+
+/* CARDS */
+
+/* Standard card style for lessons and trainers. */
+.r-card {
+    background-color: var(--or-white);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.18);
+    transition: all 300ms ease-in-out;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Lifts the card up slightly on hover to make it feel interactive. */
+.r-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.25rem);
+}
+
+/* Images inside the cards. */
+.r-card-media {
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* Title text within a card. */
+.r-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--or-orange);
+    margin-bottom: 0.5rem;
+}
+
+/* Card descriptive text. */
+.r-card-detail {
+    font-size: 1rem;
+    color: var(--or-blue);
+    flex-grow: 1;
+}
+
+
+/* ADDITONAL CARD ELEMENTS FOR TEAM AND TRAINERS ONLY */
+
+/* Class for "Meet the Team" and "Meet the Trainers" */
+.r-card-team {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Text for "Meet the Team" and "Meet the Trainers */
+.r-card-team .r-card-detail {
+    margin-bottom: 0;
+    flex-grow: 0;
+    padding-bottom: 0;
+}
+
+
+/* SUPER CARDS */
+
+/* Super card to contain three image design ("The OG's", "Our Store" photo's, etc.) */
+.r-super-card {
+    background-color: var(--or-white);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.18);
+    transition: all 300ms ease-in-out;
+    text-align: center;
+}
+
+/* Hover effect for the super card. */
+.r-super-card:hover {
+    transform: translateY(-0.25rem);
+}
+
+/* Images inside super cards. */
+.r-og-media {
+    border-radius: 0.5rem;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+
+/* FORM SECTION */
+
+/* Orange container for form area. */
+.form-section {
+    background-color: var(--or-orange);
+    padding: 2rem 1.5rem 3rem 1.5rem;
+    border-radius: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* White box for form fields. */
+.r-form {
+    background-color: var(--or-white);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+}
+
+/* Form labels. */
+.r-form-label {
+    font-weight: 600;
+    color: var(--or-blue);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Form input fields. */
+.r-form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--or-blue);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Submit form button. */
+.r-button-primary {
+    background-color: var(--or-blue);
+    color: var(--or-white);
+    border: 2px solid var(--or-orange);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: 0.2s;
+    width: 100%;
+}
+
+/* Hover effect for the primary button. */
+.r-button-primary:hover {
+    background-color: var(--or-orange);
+    color: #163552;
+}
+
+/* Makes sure the button is clearly selected when tabbing through the form. */
+.r-button-primary:focus {
+    background-color: var(--or-orange); 
+    color: var(--or-blue);
+    outline: 3px solid var(--or-white);
+}
+
+
+/* ASSOCIATIONS */
+
+/* Association badges. */
+.r-logo-badge {
+    background-color: var(--or-orange);
+    height: 140px;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.18);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+/* Hover effect for logo badges. */
+.r-logo-badge:hover {
+    transform: translateY(-5px);
+}
+
+
+/* FOOTER */
+
+/* Footer container. */
+.site-footer {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--or-white);
+}
+
+/* Footer links. */
+.site-footer a {
+    color: var(--or-white);
+}
+
+/* Hover effect for footer links. */
+.site-footer a:hover {
+    color: var(--or-orange);
+}
+
+
+/* MEDIA QUERIES 
+   I am using a "Mobile First" approach. The code above works for mobile phones.
+   The code below changes the layout for tablets and desktops. */
+
+/* 1. MOBILE QUERY (min-width: 320px) */
+@media (min-width: 320px) {
+    /* On small phones, I use a hamburger menu and hide the full navigation links. */
+    .site-header-inner {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger-menu {
+        display: block; 
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem;
+        color: var(--or-blue);
+        padding: 5px;
+    }
+
+    /* Navigation is hidden by default on mobile until clicked. */
+    .site-nav {
+        display: none; 
+        width: 100%; 
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .site-nav.active {
+        display: block;
+    }
+
+    .site-nav a {
+        display: block; 
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* 2. TABLET QUERY (min-width: 640px) */
+@media (min-width: 640px) {
+    /* On tablets, we have enough room to show the full menu, so I have hidden the hamburger button. */
+    .hamburger-menu {
+        display: none; 
+    }
+
+    /* Switch from a vertical list to a horizontal row for the links. */
+    .site-nav {
+        display: flex !important;
+        flex-direction: row;    
+        flex-wrap: nowrap; 
+		width: 100%;
+		justify-content: flex-end;
+        align-items: center;      
+        margin-top: 0;
+        gap: 0.5rem;             
+    }
+
+    .site-nav a {
+        display: inline-block;
+        margin-bottom: 0;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.95rem;     
+        white-space: nowrap;     
+    }
+   
+    .site-header-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;       
+        align-items: center;
+    }
+
+    /* Increase logo and font size slightly for larger screens. */
+    .site-brand-logo {
+        width: 4.2rem;           
+        height: 4.2rem;
+    }
+    
+    .site-brand-title {
+        font-size: 2rem;       
+    }
+    
+    .hero {
+        min-height: 320px;
+    }
+    
+    .hero-content {
+        font-size: 3.5rem;
+    }
+}
+
+/* 3. DESKTOP QUERY (min-width: 992px) */
+@media (min-width: 992px) {
+    /* For big desktop screens, I add padding to the sides so content doesn't hit the edges. */
+    .site-shell {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    .hero {
+        min-height: 380px;
+    }
+    
+    .hero-content {
+        font-size: 4rem;
+        max-width: 100%;
+    }
+}
+
+/* PRINTING 
+   This cleans up the page if the user tries to print it.
+   It hides the menu and buttons to save ink. */
+@media print {
+    .site-header, .site-footer, .hero, .r-button-primary {
+        display: none !important;
+    }
+
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    .site-shell {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: underline;
+        color: #000000;
+    }
+}

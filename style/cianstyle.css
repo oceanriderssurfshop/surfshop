@@ -1,0 +1,712 @@
+/*
+Name: Cian Bond
+Student Number: x25115596
+Date: 13/11/2025
+File: cianstyle.css
+*/
+
+/* Full-width surfboard background on entire page */
+body {
+	
+	background-image: url('../pictures/surfboard-background.jpg');
+	
+	background-size: cover;
+	
+	background-position: center;
+	
+	background-attachment: fixed;
+	
+	position: relative;
+	
+}
+
+body::before {
+	
+	content: '';
+	
+	position: fixed;
+	
+	top: 0;
+	
+	left: 0;
+	
+	right: 0;
+	
+	bottom: 0;
+	
+	background-color: rgba(255, 255, 255, 0.30);
+	
+	z-index: -1;
+	
+}
+
+/* Navbar with solid white background - no image showing through */
+.navbar {
+	
+	background-color: white;
+	
+	position: relative;
+	
+	z-index: 10;
+	
+}
+
+/* Navigation Logo Styling */
+.brand-logo {
+	
+    height: 90px;
+	
+    width: auto;
+	
+    margin-right: 15px;
+	
+    vertical-align: middle;
+}
+
+.brand-text {
+	
+    display: inline-block;
+	
+    vertical-align: middle;
+}
+
+/* Page Header Styling */
+.page-header {
+	
+    background-color: #1f4c75;
+	
+    color: white;
+	
+    text-align: center;
+	
+    padding: 60px 0;
+	
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+	
+    font-size: 3rem;
+	
+    font-weight: bold;
+	
+    margin-bottom: 10px;
+}
+
+.page-header p {
+	
+    font-size: 1.2rem;
+	
+    margin: 0;
+	
+}
+
+
+/* Filter Button Styling */
+.filter-btn {
+	
+    background-color: #c4c4c4;
+	
+    color: #1f4c75;
+	
+    border: 2px solid #787878;
+	
+    padding: 10px 20px;
+	
+    margin: 5px;
+	
+    font-size: 1rem;
+	
+    font-weight: bold;
+	
+    cursor: pointer;
+	
+	border-radius: 8px;
+	
+    transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+.filter-btn:hover {
+	
+    background-color: #e48e41;
+	
+    color: white;
+	
+    border-color: #e48e41;
+	
+    transform: translateY(-2px);
+	
+}
+
+/* Active/selected button state */
+.filter-btn.active {
+	
+    background-color: #1f4c75;
+	
+    color: white;
+	
+    border-color: #1f4c75;
+}
+
+/* Brand Cards Container */
+.brand-card {
+	
+	margin-bottom: 30px;
+	
+}
+
+/* Card styling with hover effect */
+.card {
+	
+	border: 2px solid #787878;
+	
+	border-radius: 10px;
+	
+	transition: all 0.3s ease;
+	
+	height: 100%;
+	
+	background-color: white;
+	
+}
+
+/* Card hover effect - lifts up with shadow */
+.card:hover {
+	
+	transform: translateY(-5px);
+	
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	
+	border-color: #e48e41;
+}
+
+/* Background color for surfboard cards */
+.brand-card[data-category="surfboards"] .card {
+	
+	background-color: #FFFEF5;
+	
+}
+
+/* Background color for wetsuit cards */
+.brand-card[data-category="wetsuits"] .card {
+	
+	background-color: #F0FBFC;
+	
+}
+
+/* Background color for clothing cards */
+.brand-card[data-category="clothing"] .card {
+	
+	background-color: #FFF5F3;
+	
+}
+
+/* Card body padding and alignment */
+.card-body {
+	
+	padding: 25px;
+	
+	text-align: center;
+	
+	position: relative;
+	
+	z-index: 1;
+	
+}
+
+/* Brand header container - logo and name centered side by side */
+.brand-header {
+	
+	display: flex;
+	
+	align-items: center;
+	
+	justify-content: center;
+	
+	margin-bottom: 15px;
+	
+	gap: 1px;
+	
+}
+
+/* Brand logo images on cards */
+.brand-logo-img {
+	
+	width: 110px;
+	
+	height: 110px;
+	
+	object-fit: contain;
+	
+	flex-shrink: 0;
+	
+}
+
+/* Brand name styling */
+.brand-name {
+	
+	color: #1f4c75;
+	
+	font-size: 1.5rem;
+	
+	font-weight: bold;
+	
+	margin-bottom: 0;
+	
+}
+
+/* Category label styling */
+.brand-category {
+	
+	color: #e48e41;
+	
+	font-size: 1rem;
+	
+	font-weight: bold;
+	
+	margin-bottom: 15px;
+	
+	text-transform: uppercase;
+	
+	letter-spacing: 1px;
+	
+	text-align: center;
+	
+}
+
+/* Description text styling */
+.brand-description {
+	
+	color: #787878;
+	
+	font-size: 0.95rem;
+	
+	margin-bottom: 20px;
+	
+	line-height: 1.5;
+	
+	text-align: center;
+	
+}
+
+/* View Products button styling */
+.view-btn {
+	
+	background-color: #1f4c75;
+	
+	color: white;
+	
+	border: 2px solid #1f4c75;
+	
+	padding: 10px 25px;
+	
+	font-size: 1rem;
+	
+	font-weight: bold;
+	
+	cursor: pointer;
+	
+	border-radius: 8px;
+	
+	transition: all 0.3s ease;
+	
+}
+
+/* View button hover effect */
+.view-btn:hover {
+	
+	background-color: #e48e41;
+	
+	border-color: #e48e41;
+	
+	transform: scale(1.05);
+	
+}
+
+/* Footer Styling */
+.footer {
+	
+	background-color: #1f4c75;
+	
+	color: white;
+	
+	text-align: center;
+	
+	padding: 30px 0;
+	
+	margin-top: 50px;
+	
+}
+
+.footer p {
+	
+	margin: 0;
+	
+	font-size: 1rem;
+	
+}
+
+/* Modal Overlay */
+.modal {
+	
+	display: none;
+	
+	position: fixed;
+	
+	z-index: 1000;
+	
+	left: 0;
+	
+	top: 0;
+	
+	width: 100%;
+	
+	height: 100%;
+	
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal Content Box */
+.modal-content {
+	
+	background-color: white;
+	
+	margin: 5% auto;
+	
+	padding: 30px;
+	
+	border: 2px solid #787878;
+	
+	border-radius: 10px;
+	
+	width: 80%;
+	
+	max-width: 900px;
+	
+	position: relative;
+	
+	max-height: 80vh;
+	
+	overflow-y: auto;
+	
+}
+
+/* Close Button - X symbol positioned in top-right corner */
+.close-btn {
+	
+	position: absolute;
+	
+	top: 15px;
+	
+	right: 15px;
+	
+	color: #787878;
+	
+	font-size: 2rem;
+	
+	font-weight: bold;
+	
+	cursor: pointer;
+	
+	line-height: 1;
+	
+}
+
+/* Close button hover effect */
+.close-btn:hover {
+	
+	color: #e48e41;
+	
+}
+
+/* Modal title */
+.modal-content h2 {
+	
+	color: #1f4c75;
+	
+	margin-top: 0;
+	
+	margin-bottom: 20px;
+	
+	text-align: center;
+	
+}
+
+/* Modal body content */
+.modal-body {
+	
+	text-align: center;
+	
+	color: #787878;
+	
+}
+
+/* Product images in modals */
+.product-img {
+	
+	width: 100%;
+	
+	height: 300px;
+	
+	object-fit: cover;
+	
+	border-radius: 8px;
+	
+	margin-bottom: 15px;
+	
+	border: 2px solid #e0e0e0;
+	
+}
+
+/* Product name styling */
+.product-name {
+	
+	color: #1f4c75;
+	
+	font-size: 1.2rem;
+	
+	font-weight: bold;
+	
+	margin-bottom: 10px;
+	
+}
+
+/* Product price styling */
+.product-price {
+	
+	color: #e48e41;
+	
+	font-size: 1.3rem;
+	
+	font-weight: bold;
+	
+	margin-bottom: 10px;
+	
+}
+
+/* Product description */
+.product-description {
+	
+	color: #787878;
+	
+	font-size: 0.9rem;
+	
+	margin-bottom: 10px;
+	
+}
+
+/* Contact Page Styling */
+/* Author: Cian Bond */
+/* Student Number: x25115596 */
+
+/* Contact page main heading */
+h2 {
+	
+	color: #1f4c75;
+	
+	font-size: 2.5rem;
+	
+	font-weight: 900;
+	
+	margin-top: 30px;
+	
+	margin-bottom: 30px;
+	
+	text-align: center;
+	
+	text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.9), -2px -2px 4px rgba(255, 255, 255, 0.9);
+	
+	-webkit-text-stroke: 1px white;
+	
+}
+
+/* Form group spacing */
+.form-group {
+	
+	margin-bottom: 20px;
+	
+}
+
+/* Form labels */
+.form-group label {
+	
+	display: block;
+	
+	color: white;
+	
+	font-weight: bold;
+	
+	margin-bottom: 8px;
+	
+	font-size: 1.2rem;
+	
+	text-align: left;
+	
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+	
+	-webkit-text-stroke: 1px #1f4c75;
+	
+}
+
+/* Input fields and textarea */
+.form-control {
+	
+	width: 100%;
+	
+	padding: 12px;
+	
+	border: 2px solid #c4c4c4;
+	
+	border-radius: 8px;
+	
+	font-size: 1rem;
+	
+	transition: border-color 0.3s ease;
+	
+}
+
+/* Input focus state - when user clicks in field */
+.form-control:focus {
+	
+	outline: none;
+	
+	border-color: #1f4c75;
+	
+}
+
+/* Contact form styling */
+#contactForm {
+	
+	background-color: #f8f9fa;
+	
+	padding: 30px;
+	
+	border-radius: 10px;
+	
+	border: 2px solid #c4c4c4;
+	
+}
+
+/* Submit button */
+.submit-btn {
+	
+	background-color: #1f4c75;
+	
+	color: white;
+	
+	border: 2px solid #1f4c75;
+	
+	padding: 12px 30px;
+	
+	font-size: 1.1rem;
+	
+	font-weight: bold;
+	
+	cursor: pointer;
+	
+	border-radius: 8px;
+	
+	transition: all 0.3s ease;
+	
+	margin-top: 10px;
+	
+	width: 100%;
+	
+}
+
+/* Submit button hover effect */
+.submit-btn:hover {
+	
+	background-color: #e48e41;
+	
+	border-color: #e48e41;
+	
+	transform: scale(1.02);
+	
+}
+
+/* Error messages */
+.error-message {
+	
+	display: block;
+	
+	color: #dc3545;
+	
+	font-size: 0.9rem;
+	
+	margin-top: 5px;
+	
+	font-weight: bold;
+	
+}
+
+/* Shop information container */
+.shop-info {
+	
+	background-color: #f8f9fa;
+	
+	padding: 30px;
+	
+	border-radius: 10px;
+	
+	border: 2px solid #c4c4c4;
+	
+	text-align: center;
+	
+	margin-top: 0;
+	
+}
+
+/* Individual info items */
+.info-item {
+	
+	margin-bottom: 25px;
+	
+}
+
+/* Info item headings */
+.info-item h3 {
+	
+	color: #e48e41;
+	
+	font-size: 1.2rem;
+	
+	font-weight: bold;
+	
+	margin-bottom: 10px;
+	
+}
+
+/* Info item text */
+.info-item p {
+	
+	color: #787878;
+	
+	font-size: 1rem;
+	
+	line-height: 1.6;
+	
+	margin: 0;
+	
+}
+
+/* Links in shop info (phone and email) */
+.info-item a {
+	
+	color: #1f4c75;
+	
+	text-decoration: none;
+	
+	transition: color 0.3s ease;
+	
+}
+
+/* Link hover effect */
+.info-item a:hover {
+	
+	color: #e48e41;
+	
+	text-decoration: underline;
+	
+}

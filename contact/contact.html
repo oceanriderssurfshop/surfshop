@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Ocean Riders</title>
+  <meta name="description" content="Get in touch with Ocean Riders Surf Shop in Lahinch, Co. Clare. Contact us about surf lessons, rentals or products.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Shared Unified CSS -->
+  <link rel="stylesheet" href="../style/main.css">
+
+  <!-- Trade Winds font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-brand">
+			<a href="../index.html">
+				<img src="../pictures/logo.png" class="site-brand-logo" alt="Ocean Riders Logo">
+				<h1 class="site-brand-title">Ocean Riders<br>Surf Shop</h1>
+			</a>
+      </div>
+
+		<button class="hamburger-menu">☰</button>
+
+      <nav class="site-nav">
+        <a href="../index.html">Home</a>
+        <a href="../brands/brands.html">Brands</a>
+        <a href="../lessons/lessons.html">Lessons</a>
+        <a href="../about/about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="site-shell">
+
+    <section class="section">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="text-center" style="color:white;">
+        Have questions about lessons, rentals, or products? We’re here to help.
+      </p>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="form-section">
+	
+      <div class="form-wrapper">
+	  
+        <form class="form" id="contactForm">
+          
+        <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+			
+            <input class="form-input" type="text" id="name" required>
+			
+			<span class="error-message" id="nameError" style="color: red; font-size: 0.9rem;"></span>
+			
+		</div>
+
+		<div class="form-group">
+		
+            <label class="form-label" for="email">Email</label>
+			
+            <input class="form-input" type="email" id="email" required>
+			
+			<span class="error-message" id="emailError" style="color: red; font-size: 0.9rem;"></span>
+			
+		</div>
+		
+        
+
+        <div class="form-group">
+            <label class="form-label" for="phone">Phone (Optional)</label>
+			
+            <input class="form-input" type="text" id="phone">
+			
+			<span class="error-message" id="phoneError" style="color: red; font-size: 0.9rem;"></span>
+			
+		</div>
+		
+        
+
+        <div class="form-group">
+
+			<label class="form-label" for="message">Message</label>
+    
+			<textarea class="form-input" id="message" rows="4" required></textarea>
+    
+			<span class="error-message" id="messageError" style="color: red; font-size: 0.9rem;"></span>
+    
+		</div>
+          
+
+          <button class="button-primary" type="submit">Send Message</button>
+		  
+        </form>
+		
+      </div>
+	  
+    </section>
+
+    <!-- CONTACT INFO -->
+    <section class="section">
+      <h2 class="section-title" style="margin-top: 1rem; margin-bottom: 0.5rem;">Visit Us</h2>
+
+      <div class="card-surface">
+        <p class="card-text">
+          Ocean Riders Surf Shop<br>
+          Main Street, Lahinch, Co. Clare<br>
+          Ireland
+        </p>
+        <p class="card-text">
+			Phone: <strong><a href="tel:+353651234567" style="color: var(--or-blue);">065 123 4567</a></strong><br>
+			Email: <strong><a href="mailto:info@oceanriders.ie" style="color: var(--or-blue);">info@oceanriders.ie</a></strong>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+	<!-- Footer -->
+  
+	<footer class="site-footer">
+	
+	<p>&copy; 2025 Ocean Riders Surf Shop | Lahinch, Co. Clare</p>
+	
+	<p>
+	
+		<a href="../footer/privacy.html">Privacy</a> |
+		
+		<a href="../footer/cookies.html">Cookies</a> |
+		
+		<a href="../footer/terms.html">Terms of Use</a>
+		
+	</p>
+	
+</footer>
+
+	<!-- Custom JavaScript file -->
+	<script src="../javaScript/script.js"></script>
+
+</body>
+</html>

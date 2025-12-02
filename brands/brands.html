@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brands | Ocean Riders</title>
+  <meta name="description" content="Browse premium surf brands, wetsuits, surfboards and accessories at Ocean Riders Surf Shop, Lahinch, Co. Clare.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Unified CSS -->
+  <link rel="stylesheet" href="../style/main.css">
+
+  <!-- Trade Winds font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-brand">
+			<a href="../index.html">
+				<img src="../pictures/logo.png" class="site-brand-logo" alt="Ocean Riders Logo">
+				<h1 class="site-brand-title">Ocean Riders<br>Surf Shop</h1>
+			</a>
+      </div>
+
+		<button class="hamburger-menu">☰</button>
+
+      <nav class="site-nav">
+        <a href="../index.html">Home</a>
+        <a href="brands.html" class="active">Brands</a>
+        <a href="../lessons/lessons.html">Lessons</a>
+        <a href="../about/about.html">About</a>
+        <a href="../contact/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="site-shell">
+
+    <!-- PAGE TITLE -->
+    <section class="section">
+      <h2 class="section-title">Our Brands</h2>
+      <p class="text-center" style="color:white;">
+        Explore premium boards, wetsuits and surf gear from the world's top surf brands.
+      </p>
+    </section>
+	
+	<!-- Search bar -->
+	<div class="row mb-4">
+	
+		<div class="col-md-8 mx-auto">
+		
+            <input type="text" id="searchBar" class="form-control" placeholder="Search for brands..." onkeyup="searchBrands()">
+			
+        </div>
+		
+	</div>
+		
+	<!-- Filter Buttons -->
+    <div class="row mb-4">
+	
+        <div class="col-12 text-center">
+		
+            <button class="filter-btn active" onclick="filterBrands('all')">All Brands</button>
+			
+            <button class="filter-btn" onclick="filterBrands('surfboards')">Surfboards</button>
+			
+            <button class="filter-btn" onclick="filterBrands('wetsuits')">Wetsuits</button>
+			
+            <button class="filter-btn" onclick="filterBrands('clothing')">Clothing</button>
+        
+		</div>
+    
+	</div>
+
+    <!-- BRAND CARDS -->
+    <section class="section">
+      <div class="row g-4">
+
+        <!-- Brand 1 -->
+        <div class="col-12 col-sm-6 col-md-4">
+		<div class="brand-card" data-category="surfboards" onclick="showModal('modal1')" style="cursor: pointer;">
+            <img src="../pictures/wave-warrior-logo.png" alt="Wave Warrior logo">
+            <h3 class="card-title brand-name">Wave Warrior</h3>
+            <p class="card-text">Performance surfboards for all skill levels.</p>
+          </div>
+        </div>
+
+        <!-- Brand 2 -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="brand-card" data-category="wetsuits" onclick="showModal('modal2')" style="cursor: pointer;">
+            <img src="../pictures/tide-turner-logo.png" alt="Tide Turner logo">
+            <h3 class="card-title brand-name">Tide Turner</h3>
+            <p class="card-text">Premium wetsuits and surf accessories.</p>
+          </div>
+        </div>
+
+        <!-- Brand 3 -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="brand-card" data-category="clothing" onclick="showModal('modal3')" style="cursor: pointer;">
+            <img src="../pictures/reef-rider-logo.png" alt="Reef Rider logo">
+            <h3 class="card-title brand-name">Reef Rider</h3>
+            <p class="card-text">Surf wear and lifestyle apparel.</p>
+          </div>
+        </div>
+
+        <!-- Brand 4 -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="brand-card" data-category="surfboards" onclick="showModal('modal4')" style="cursor: pointer;">
+            <img src="../pictures/swell-seeker-logo.png" alt="Swell Seeker logo">
+            <h3 class="card-title brand-name">Swell Seeker</h3>
+            <p class="card-text">Handcrafted surfboards for powerful clean waves.</p>
+          </div>
+        </div>
+
+        <!-- Brand 5 -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="brand-card" data-category="wetsuits" onclick="showModal('modal5')" style="cursor: pointer;">
+            <img src="../pictures/current-chasers-logo.png" alt="Current Chasers logo">
+            <h3 class="card-title brand-name">Current Chasers</h3>
+            <p class="card-text">Cold water wetsuits & rashguards.</p>
+          </div>
+        </div>
+
+        <!-- Brand 6 -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="brand-card" data-category="clothing" onclick="showModal('modal6')" style="cursor: pointer;">
+            <img src="../pictures/shore-break-logo.png" alt="Shore Break logo">
+            <h3 class="card-title brand-name">Shore Break</h3>
+            <p class="card-text">Casual surf clothing and beachwear.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  
+	<!-- Modals for Product Images -->
+	
+	<!-- Modal 1: Wave Warrior -->
+	<div id="modal1" class="modal">
+	
+		<div class="modal-content">
+		
+			<span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+			
+			<h2>Wave Warrior Products</h2>
+			
+			<div class="modal-body">
+			
+				<div class="row">
+				
+					<!-- Product 1: Classic Shortboard -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/wave-warrior-2.jpg" alt="Classic Shortboard" class="product-img">
+						
+						<h4 class="product-name">Classic Shortboard 6'2"</h4>
+						
+						<p class="product-price">€549.00</p>
+						
+						<p class="product-description">White and blue performance shortboard</p>
+						
+					</div>
+					
+					<!-- Product 2: Tropical Longboard -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/wave-warrior-3.jpg" alt="Tropical Longboard" class="product-img">
+						
+						<h4 class="product-name">Tropical Longboard 9'0"</h4>
+						
+						<p class="product-price">€799.00</p>
+						
+						<p class="product-description">Green palm leaf design longboard</p>
+						
+					</div>
+					
+					<!-- Product 3: Performance Shortboard -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/wave-warrior-4.jpg" alt="Performance Shortboard" class="product-img">
+						
+						<h4 class="product-name">Performance Shortboard 6'0"</h4>
+						
+						<p class="product-price">€599.00</p>
+						
+						<p class="product-description">Blue high-performance shortboard</p>
+						
+					</div>
+					
+					<!-- Product 4: Premium Surf Wax -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/wave-warrior-1.jpg" alt="Premium Surf Wax" class="product-img">
+						
+						<h4 class="product-name">Premium Surf Wax</h4>
+						
+						<p class="product-price">€12.99</p>
+						
+						<p class="product-description">High-performance surf wax for all water temperatures</p>
+						
+					</div>
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<!-- Modal 2: Tide Turner -->
+	<div id="modal2" class="modal">
+	
+		<div class="modal-content">
+		
+			<span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+			
+			<h2>Tide Turner Products</h2>
+			
+			<div class="modal-body">
+			
+				<div class="row">
+				
+					<!-- Product 1: Premium Surf Leash -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/tide-turner-1.jpg" alt="Premium Surf Leash" class="product-img">
+						
+						<h4 class="product-name">Premium Surf Leash</h4>
+						
+						<p class="product-price">€34.99</p>
+						
+						<p class="product-description">Teal 7ft coiled leash with comfortable ankle strap</p>
+						
+					</div>
+					
+					<!-- Product 2: Standard Surf Leash -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/tide-turner-2.jpg" alt="Standard Surf Leash" class="product-img">
+						
+						<h4 class="product-name">Standard Surf Leash 6ft</h4>
+						
+						<p class="product-price">€29.99</p>
+						
+						<p class="product-description">Durable straight leash for everyday surfing</p>
+						
+					</div>
+					
+					<!-- Product 3: Cold Water Wetsuit -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/tide-turner-3.jpg" alt="Cold Water Wetsuit" class="product-img">
+						
+						<h4 class="product-name">Cold Water Wetsuit 5/4mm</h4>
+						
+						<p class="product-price">€249.00</p>
+						
+						<p class="product-description">Full black premium wetsuit for cold water surfing</p>
+						
+					</div>
+					
+					<!-- Product 4: Pro Performance Wetsuit -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/tide-turner-4.jpg" alt="Pro Performance Wetsuit" class="product-img">
+						
+						<h4 class="product-name">Pro Performance Wetsuit 3/2mm</h4>
+						
+						<p class="product-price">€189.00</p>
+						
+						<p class="product-description">Black and teal wetsuit with flexible neoprene construction</p>
+						
+					</div>
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<!-- Modal 3: Reef Rider -->
+	<div id="modal3" class="modal">
+	
+		<div class="modal-content">
+		
+			<span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+			
+			<h2>Reef Rider Products</h2>
+			
+			<div class="modal-body">
+			
+				<div class="row">
+				
+					<!-- Product 1: Tropical Surf Outfit -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/reef-rider-bikini-set.jpg" alt="Tropical Surf Outfit" class="product-img">
+						
+						<h4 class="product-name">Tropical Surf Outfit</h4>
+						
+						<p class="product-price">€59.99</p>
+						
+						<p class="product-description">Green palm print surf outfit</p>
+						
+					</div>
+					
+					<!-- Product 2: Reefside Graphic Tee -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/reef-rider-graphic-tee.jpg" alt="Reefside Graphic Tee" class="product-img">
+						
+						<h4 class="product-name">Reefside Graphic Tee</h4>
+						
+						<p class="product-price">€34.99</p>
+						
+						<p class="product-description">White cotton t-shirt with surf graphic</p>
+						
+					</div>
+					
+					<!-- Product 3: Surf Tee -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/reef-rider-statement-tee.jpg" alt="Surf Tee" class="product-img">
+						
+						<h4 class="product-name">Surf Tee</h4>
+						
+						<p class="product-price">€39.99</p>
+						
+						<p class="product-description">Black t-shirt with bold surf message</p>
+						
+					</div>
+					
+					<!-- Product 4: Classic Board Shorts -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/reef-rider-board-shorts.jpg" alt="Classic Board Shorts" class="product-img">
+						
+						<h4 class="product-name">Classic Board Shorts</h4>
+						
+						<p class="product-price">€49.99</p>
+						
+						<p class="product-description">Tan performance board shorts with pockets</p>
+						
+					</div>
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<!-- Modal 4: Swell Seeker -->
+	<div id="modal4" class="modal">
+	
+		<div class="modal-content">
+		
+			<span class="close-btn" onclick="closeModal('modal4')">&times;</span>
+			
+			<h2>Swell Seeker Products</h2>
+			
+			<div class="modal-body">
+			
+				<div class="row">
+				
+					<!-- Product 1: Sunrise Longboard -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/swell-seeker-1.jpg" alt="Sunrise Longboard" class="product-img">
+						
+						<h4 class="product-name">Sunrise Longboard 9'4"</h4>
+						
+						<p class="product-price">€849.00</p>
+						
+						<p class="product-description">Classic yellow cream longboard, perfect for smooth wave riding</p>
+						
+					</div>
+					
+					<!-- Product 2: Minimalist Shortboard -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/swell-seeker-2.jpg" alt="Minimalist Shortboard" class="product-img">
+						
+						<h4 class="product-name">Minimalist Shortboard 6'4"</h4>
+						
+						<p class="product-price">€629.00</p>
+						
+						<p class="product-description">Clean white design for all-around performance</p>
+						
+					</div>
+					
+					<!-- Product 3: Vintage Cruiser -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/swell-seeker-3.jpg" alt="Vintage Cruiser" class="product-img">
+						
+						<h4 class="product-name">Vintage Cruiser 8'0"</h4>
+						
+						<p class="product-price">€729.00</p>
+						
+						<p class="product-description">Retro yellow and green design, smooth and stylish</p>
+						
+					</div>
+					
+					<!-- Product 4: Premium Wood Grain -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/swell-seeker-4.jpg" alt="Premium Wood Grain" class="product-img">
+						
+						<h4 class="product-name">Premium Wood Grain 7'6"</h4>
+						
+						<p class="product-price">€899.00</p>
+						
+						<p class="product-description">Hand-finished wooden surfboard with natural grain beauty</p>
+						
+					</div>
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<!-- Modal 5: Current Chasers -->
+	<div id="modal5" class="modal">
+	
+		<div class="modal-content">
+		
+			<span class="close-btn" onclick="closeModal('modal5')">&times;</span>
+			
+			<h2>Current Chasers Products</h2>
+			
+			<div class="modal-body">
+			
+				<div class="row">
+				
+					<!-- Product 1: Pro Performance Wetsuit -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/current-chasers-pro-wetsuit.jpg" alt="Pro Performance Wetsuit" class="product-img">
+						
+						<h4 class="product-name">Pro Performance Wetsuit 4/3mm</h4>
+						
+						<p class="product-price">€249.99</p>
+						
+						<p class="product-description">Black premium neoprene full wetsuit</p>
+						
+					</div>
+					
+					<!-- Product 2: Women's Flex Wetsuit -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/current-chasers-womens-wetsuit.jpg" alt="Women's Flex Wetsuit" class="product-img">
+						
+						<h4 class="product-name">Women's Flex Wetsuit 3/2mm</h4>
+						
+						<p class="product-price">€229.99</p>
+						
+						<p class="product-description">Grey and white performance wetsuit</p>
+						
+					</div>
+					
+					<!-- Product 3: UV Protection Rashguard -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/current-chasers-rashguard.jpg" alt="UV Protection Rashguard" class="product-img">
+						
+						<h4 class="product-name">UV Protection Rashguard</h4>
+						
+						<p class="product-price">€79.99</p>
+						
+						<p class="product-description">Black and blue long-sleeve rashguard</p>
+						
+					</div>
+					
+					<!-- Product 4: Summer Sprint Wetsuit -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/current-chasers-summer-wetsuit.jpg" alt="Summer Sprint Wetsuit" class="product-img">
+						
+						<h4 class="product-name">Summer Sprint Wetsuit 2mm</h4>
+						
+						<p class="product-price">€189.99</p>
+						
+						<p class="product-description">Black and grey shortie wetsuit</p>
+						
+					</div>
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<!-- Modal 6: Shore Break -->
+	<div id="modal6" class="modal">
+	
+		<div class="modal-content">
+		
+			<span class="close-btn" onclick="closeModal('modal6')">&times;</span>
+			
+			<h2>Shore Break Products</h2>
+			
+			<div class="modal-body">
+			
+				<div class="row">
+				
+					<!-- Product 1: State Of Mind Casual Tee -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/shore-break-casual-tee.jpg" alt="State Of Mind Casual Tee" class="product-img">
+						
+						<h4 class="product-name">State Of Mind Casual Tee</h4>
+						
+						<p class="product-price">€29.99</p>
+						
+						<p class="product-description">Navy printed t-shirt with beach design</p>
+						
+					</div>
+					
+					<!-- Product 2: Beach Tank & Shorts Set -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/shore-break-tank-shorts.jpg" alt="Beach Tank & Shorts Set" class="product-img">
+						
+						<h4 class="product-name">Beach Tank & Shorts Set</h4>
+						
+						<p class="product-price">€54.99</p>
+						
+						<p class="product-description">White tank top with board shorts combo</p>
+						
+					</div>
+					
+					<!-- Product 3: Performance Rashguard -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/shore-break-rashguard.jpg" alt="Performance Rashguard" class="product-img">
+						
+						<h4 class="product-name">Performance Rashguard</h4>
+						
+						<p class="product-price">€69.99</p>
+						
+						<p class="product-description">Red and black long-sleeve rashguard</p>
+						
+					</div>
+					
+					<!-- Product 4: Hawaii Graphic Tee -->
+					<div class="col-md-6 mb-4">
+					
+						<img src="../pictures/shore-break-graphic-tee.jpg" alt="Hawaii Graphic Tee" class="product-img">
+						
+						<h4 class="product-name">Hawaii Graphic Tee</h4>
+						
+						<p class="product-price">€34.99</p>
+						
+						<p class="product-description">Black t-shirt with tropical sunset graphic</p>
+						
+					</div>
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
+	<!-- Footer -->
+  
+	<footer class="site-footer">
+	
+	<p>&copy; 2025 Ocean Riders Surf Shop | Lahinch, Co. Clare</p>
+	
+	<p>
+	
+		<a href="../footer/privacy.html">Privacy</a> |
+		
+		<a href="../footer/cookies.html">Cookies</a> |
+		
+		<a href="../footer/terms.html">Terms of Use</a>
+		
+	</p>
+	
+	</footer>
+
+	<!-- JavaScript for Modal Functionality -->
+	<script src="../javaScript/script.js"></script>
+
+</body>
+</html>
