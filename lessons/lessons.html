@@ -46,7 +46,8 @@
     <main class="site-shell">
         
         <section class="hero">
-            <img src="../pictures/dog.png" alt="Surfing Dog" class="hero-img">
+			<!--fetchpriority added to ensure the hero image is loaded first due to issues I was having with load times https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/fetchPriority-->
+            <img src="../pictures/dog.jpg" alt="Surfing Dog" class="hero-img" fetchpriority="high">
             <div class="hero-content">
                 We can teach you some new tricks.
             </div>
@@ -60,7 +61,7 @@
                 <div class="col-md-4">
                     <div class="r-card">
                         <!--image from Pexels.com-->
-						<img src="../pictures/beginner.png" alt="Beginner surf lesson" class="r-card-media">
+						<img src="../pictures/beginner.jpg" alt="Beginner surf lesson" class="r-card-media">
                         <h3 class="r-card-title">Beginners</h3>
                         <p class="r-card-detail">Learn the fundamentals of surfing, focusing on water safety, board control, and mastering the pop-up to ride your first whitewater waves toward the shore.</p>
                         <button class="r-button-primary book-btn" data-lesson="Beginner Lesson">Book Now</button>
@@ -70,7 +71,7 @@
                 <div class="col-md-4">
                     <div class="r-card">
                         <!--image from Pexels.com-->
-						<img src="../pictures/interm.png" alt="Intermediate surf lesson" class="r-card-media">
+						<img src="../pictures/interm.jpg" alt="Intermediate surf lesson" class="r-card-media">
                         <h3 class="r-card-title">Intermediate</h3>
                         <p class="r-card-detail">We progress beyond the broken waves by learning wave timing, paddling out efficiently, and steering the board to ride unbroken green waves parallel to the beach.</p>
                         <button class="r-button-primary book-btn" data-lesson="Intermediate Lesson">Book Now</button>
@@ -80,7 +81,7 @@
                 <div class="col-md-4">
                     <div class="r-card">
                         <!--image from Pexels.com-->
-						<img src="../pictures/advanced.png" alt="Advanced surf lesson" class="r-card-media">
+						<img src="../pictures/advanced.jpg" alt="Advanced surf lesson" class="r-card-media">
                         <h3 class="r-card-title">Advanced</h3>
                         <p class="r-card-detail">Master high-performance maneuvers, speed generation, and ocean reading skills in powerful swell conditions to prepare for competitive surfing or large-wave expertise.</p>
                         <button class="r-button-primary book-btn" data-lesson="Advanced Lesson">Book Now</button>
@@ -97,7 +98,7 @@
                 <div class="col-md-4">
                     <div class="r-card r-card-team">
                         <!--image from Pexels.com-->
-						<img src="../pictures/womensurfer.png" alt="Jessie, Beginner Instructor" class="r-card-media">
+						<img src="../pictures/womensurfer.jpg" alt="Jessie, Beginner Instructor" class="r-card-media">
                         <h3 class="r-card-title">Jessie James</h3>
                         <p class="r-card-detail">Jessie's calm patience and expertise in small wave mechanics make her the ideal instructor for first-time surfers. Both children and adults love learning from her.</p>
                     </div>
@@ -106,7 +107,7 @@
                 <div class="col-md-4">
                     <div class="r-card r-card-team">
                         <!--image from Pexels.com-->
-						<img src="../pictures/intmale.png" alt="Alex, Intermediate Instructor" class="r-card-media">
+						<img src="../pictures/intmale.jpg" alt="Alex, Intermediate Instructor" class="r-card-media">
                         <h3 class="r-card-title">Alex Rico</h3>
                         <p class="r-card-detail">Alex is uniquely suited for intermediate surfers because of his focus on helping students transition from whitewater to confidently riding unbroken green waves.</p>
                     </div>
@@ -115,7 +116,7 @@
                 <div class="col-md-4">
                     <div class="r-card r-card-team">
                         <!--image from trimyourlifeaway.com-->
-						<img src="../pictures/kellyslater.png" alt="Kelly S., Advanced Instructor" class="r-card-media">
+						<img src="../pictures/kellyslater.jpg" alt="Kelly S., Advanced Instructor" class="r-card-media">
                         <h3 class="r-card-title">Kelly Slater</h3>
                         <p class="r-card-detail">Kelly has won a record 11 World Championship Tour titles and 56 elite event victories. The perfect fit for our Advanced Trainer.</p>
                     </div>
@@ -161,25 +162,25 @@
                     
                     <div class="col-6 col-md-3">
                         <a href="https://www.youtube.com/watch?v=eI0JBvEAa94" target="_blank">
-                            <img src="../pictures/billabong.png" alt="Billabong" class="r-logo-badge">
+                            <img src="../pictures/billabong.jpg" alt="Billabong" class="r-logo-badge">
                         </a>
                     </div>
                     
                     <div class="col-6 col-md-3">
                         <a href="https://www.irishsurfing.ie" target="_blank">
-                            <img src="../pictures/irishsurf.png" alt="Irish Surfing" class="r-logo-badge">
+                            <img src="../pictures/irishsurf.jpg" alt="Irish Surfing" class="r-logo-badge">
                         </a>
                     </div>
                     
                     <div class="col-6 col-md-3">
                         <a href="https://www.eurosurfing.org" target="_blank">
-                            <img src="../pictures/eurosurf.png" alt="European Surfing" class="r-logo-badge">
+                            <img src="../pictures/eurosurf.jpg" alt="European Surfing" class="r-logo-badge">
                         </a>
                     </div>
                     
                     <div class="col-6 col-md-3">
                         <a href="https://isasurf.org" target="_blank">
-                            <img src="../pictures/intsurf.png" alt="International Surfing" class="r-logo-badge">
+                            <img src="../pictures/intsurf.jpg" alt="International Surfing" class="r-logo-badge">
                         </a>
                     </div>
 

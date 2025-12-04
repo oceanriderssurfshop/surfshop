@@ -46,7 +46,8 @@
     <main class="site-shell">
         
         <section class="hero">
-            <img src="../pictures/aboutmain.png" alt="Two Surfers" class="hero-img">
+			<!--fetchpriority added to ensure the hero image is loaded first due to issues I was having with load times https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/fetchPriority-->
+            <img src="../pictures/aboutmain.jpg" alt="Two Surfers" class="hero-img" fetchpriority="high">
             <div class="hero-content">
                 Where it all began.
             </div>
@@ -59,17 +60,17 @@
                 <div class="row g-4 mb-1">
                     <div class="col-md-4">
                         <!--image from Pexels.com-->
-						<img src="../pictures/owner1.png" alt="Pic of Paulie Thoma" class="r-og-media">
+						<img src="../pictures/owner1.jpg" alt="Pic of Paulie Thoma" class="r-og-media">
                         <h3 class="r-card-title">Paulie Thoma</h3>
                     </div>
                     <div class="col-md-4">
                         <!--image from istockphoto.com-->
-						<img src="../pictures/owner2.png" alt="Pic of Marco Max" class="r-og-media">
+						<img src="../pictures/owner2.jpg" alt="Pic of Marco Max" class="r-og-media">
                         <h3 class="r-card-title">Marco Max</h3>
                     </div>
                     <div class="col-md-4">
                         <!--image from Pinterest.com-->
-						<img src="../pictures/owner3.png" alt="Pic of Davie Gregs" class="r-og-media">
+						<img src="../pictures/owner3.jpg" alt="Pic of Davie Gregs" class="r-og-media">
                         <h3 class="r-card-title">Davie Gregs</h3>
                     </div>
                 </div>
@@ -89,7 +90,7 @@
                 <div class="col-md-4">
                     <div class="r-card r-card-team">
                         <!--image from ohanasurfshop.com-->
-						<img src="../pictures/Assistant.png" alt="Stevie Shop Assistant" class="r-card-media">
+						<img src="../pictures/Assistant.jpg" alt="Stevie Shop Assistant" class="r-card-media">
                         <h3 class="r-card-title">Stevie</h3>
                         <p class="r-card-detail">Stevie, the stoked and shredding surf shop assistant, is totally barrelled in his knowledge and will hook you up with a board that's absolutely gnarly!</p>
                     </div>
@@ -98,7 +99,7 @@
                 <div class="col-md-4">
                     <div class="r-card r-card-team">
                         <!--image from oursouthbay.com-->
-						<img src="../pictures/boardmaker.png" alt="man making surfboard" class="r-card-media">
+						<img src="../pictures/boardmaker.jpg" alt="man making surfboard" class="r-card-media">
                         <h3 class="r-card-title">Sand-Man</h3>
                         <p class="r-card-detail">Sand-Man (aka Michael Weaver) is a meticulous shaper who is dialed in to crafting epic custom surfboards, ensuring every board is clean and ready to score some waves.</p>
                     </div>
@@ -107,7 +108,7 @@
                 <div class="col-md-4">
                     <div class="r-card r-card-team">
                         <!--image from ohanasurfshop.com-->
-						<img src="../pictures/shopdogs.png" alt="dogs in surf shop" class="r-card-media">
+						<img src="../pictures/shopdogs.jpg" alt="dogs in surf shop" class="r-card-media">
                         <h3 class="r-card-title">Sally, Shiela and Salty</h3>
                         <p class="r-card-detail">The girls are the surf shop's official greeters, the most chill local crew who are always hanging loose and providing some good vibes while you're picking out your new gear!</p>
                     </div>
@@ -120,16 +121,16 @@
             <div class="r-super-card">
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <!--image from mentawaiisland.com-->
-						<img src="../pictures/shop1.png" alt="Shop Interior" class="r-og-media mb-0">
+                        <!--image from thetrendspotter.net-->
+						<img src="../pictures/shop1.jpg" alt="Shop Interior" class="r-og-media mb-0">
                     </div>
                     <div class="col-md-4">
                         <!--image from nomadsurf1968.com-->
-						<img src="../pictures/shop2.png" alt="Shop Interior" class="r-og-media mb-0">
+						<img src="../pictures/shop2.jpg" alt="Shop Interior" class="r-og-media mb-0">
                     </div>
                     <div class="col-md-4">
                         <!--image from tallysoft.com-->
-						<img src="../pictures/shop3.png" alt="Shop Interior" class="r-og-media mb-0">
+						<img src="../pictures/shop3.jpg" alt="Shop Interior" class="r-og-media mb-0">
                     </div>
                 </div>
             </div>
