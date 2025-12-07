@@ -5,7 +5,7 @@ Date: 13/11/2025
 File: script.js
 */
 
-// Hamburger Menu Logic
+// Hamburger menu for mobile
 const hamburger = document.querySelector('.hamburger-menu');
 const nav = document.querySelector('.site-nav');
 
@@ -15,39 +15,37 @@ if (hamburger && nav) {
     });
 }
 
+//Brand Filtering
 // Filter brands by category
 function filterBrands(category) {
 	
-	// Get all brand cards
 	var cards = document.getElementsByClassName('brand-card');
 	
-	// Get all filter buttons
 	var buttons = document.getElementsByClassName('filter-btn');
 	
-	// Loop through all cards
+	// Loop through all of the cards
 	for (var i = 0; i < cards.length; i++) {
 		
-		// Get the category of this card
+		// Get the category of specific card
 		var cardCategory = cards[i].getAttribute('data-category');
 		
-		// Get the parent column div
-		var parentCol = cards[i].parentElement;
+		var parentCol = cards[i].parentElement; // We need the parent div to hide the whole column here and not just the card
 		
-		// If 'all' is selected, show all cards
+		// If all is selected show all cards
 		if (category === 'all') {
 			
 			parentCol.style.display = 'block';
 			
 		}
 		
-		// If card category matches selected category, show it
+		// If the card category matches the users selected category then show it
 		else if (cardCategory === category) {
 			
 			parentCol.style.display = 'block';
 			
 		}
 		
-		// Otherwise, hide the card
+		// If it doesn't then hide card
 		else {
 			
 			parentCol.style.display = 'none';
@@ -56,23 +54,23 @@ function filterBrands(category) {
 		
 	}
 	
-	// Update active button styling
+	// Update which button looks active
 	for (var j = 0; j < buttons.length; j++) {
 		
 		buttons[j].classList.remove('active');
 		
 	}
 	
-	// Add active class to clicked button
+	
 	event.target.classList.add('active');
 	
-	// Get the row container
+	
 	var row = document.querySelector('.row.g-4');
 	
-	// Center cards if filtered, align left if showing all
+	
 	if (category === 'all') {
 		
-		row.classList.remove('justify-content-center');
+		row.classList.remove('justify-content-center'); // This centres the filtered cards to make it look more aesthetic. Before they were just pushed to the left
 		
 	}
 	
@@ -84,34 +82,32 @@ function filterBrands(category) {
 	
 }
 
+// Search Bar
 // Search brands by name
 function searchBrands() {
 
-	// Get the search input value and convert to lowercase
-	var searchInput = document.getElementById('searchBar').value.toLowerCase();
+	
+	var searchInput = document.getElementById('searchBar').value.toLowerCase();//Converting to lowercase here to make it case insensitive
 
-	// Get all brand cards
 	var cards = document.getElementsByClassName('brand-card');
 
-	// Loop through all cards
+	// Loop through all of the cards
 	for (var i = 0; i < cards.length; i++) {
 	
-		// Get the brand name from the card
 		var brandName = cards[i].getElementsByClassName('brand-name')[0].textContent.toLowerCase();
 		
-		// Get the parent column div
 		var parentCol = cards[i].parentElement;
 	
 		// Check if brand name includes the search text
 		if (brandName.includes(searchInput)) {
 			
-			parentCol.style.display = 'block';
+			parentCol.style.display = 'block'; //this displays it if it is
 			
 		}
 		
 		else {
 			
-			parentCol.style.display = 'none';
+			parentCol.style.display = 'none'; //hides it if it isnt. Similar to the buttons before
 			
 		}
 		
@@ -119,34 +115,33 @@ function searchBrands() {
 	
 }
 	
+//Modals
 // Show modal by ID
 function showModal(modalId) {
 	
-	// Get the modal element by its ID
 	var modal = document.getElementById(modalId);
 	
-	// Display the modal
-	modal.style.display = 'block';
+	modal.style.display = 'block'; // this displays the modal
 }
 
 // Close modal by ID
 function closeModal(modalId) {
 	
-	// Get the modal element by its ID
+	
 	var modal = document.getElementById(modalId);
 	
-	// Hide the modal
+	
 	modal.style.display = 'none';
 	
 }
 
-// Close modal when clicking outside the content box
+//This closes the modal if the user clicks to the outside of it on the screen
 window.onclick = function(event) {
 	
-	// Check if the clicked element has class 'modal'
+	
 	if (event.target.classList.contains('modal')) {
 		
-		// Hide the modal that was clicked
+
 		event.target.style.display = 'none';
 	}
 }
@@ -162,22 +157,18 @@ JavaScript for Contact Form Validation
 // Get the form element
 var contactForm = document.getElementById('contactForm');
 
-// Listen for form submission
 if (contactForm) {
 	
 	contactForm.addEventListener('submit', function(event) {
 		
-		// Prevent form from actually submitting
-		event.preventDefault();
+		event.preventDefault(); // I've put this in to stop the browser from refreshing. If I didn't do this then the error messages would never show if there were any
 		
-		// Validate the form
 		if (validateContactForm()) {
 			
-			// If validation passes, show success message
-			alert('Thank you! Your message has been sent successfully.');
+			alert('Thank you! Your message has been sent successfully.'); // if the form validates this message will show
 			
-			// Clear the form
-			contactForm.reset();
+			
+			contactForm.reset(); // This is to then clear the fields so another message can be sent if required
 			
 		}
 		
@@ -188,7 +179,7 @@ if (contactForm) {
 // Validate contact form function
 function validateContactForm() {
 	
-	// Clear all previous error messages
+	// This clears all previous error messages
 	document.getElementById('nameError').textContent = '';
 	
 	document.getElementById('emailError').textContent = '';
@@ -197,7 +188,7 @@ function validateContactForm() {
 	
 	document.getElementById('messageError').textContent = '';
 	
-	// Get form field values
+	// This gets all of the form values submitted. I have used trim to get rid of any accidental spaces that might be at the beginning or end
 	var name = document.getElementById('name').value.trim();
 	
 	var email = document.getElementById('email').value.trim();
@@ -209,7 +200,7 @@ function validateContactForm() {
 	// Track if form is valid
 	var isValid = true;
 	
-	// Validate Name
+	// This makes sure a name is entered. If they don't put anything in for it it will return an error message
 	if (name === '') {
 		
 		document.getElementById('nameError').textContent = 'Please enter your name';
@@ -218,7 +209,7 @@ function validateContactForm() {
 		
 	}
 	
-	// Validate Email
+	// This does the same for as above for email
 	if (email === '') {
 		
 		document.getElementById('emailError').textContent = 'Please enter your email';
@@ -226,6 +217,8 @@ function validateContactForm() {
 		isValid = false;
 		
 	}
+	
+	// This part is to make sure that a proper email address is entered. If a @ and a . are not included it will return an error message
 	else if (!email.includes('@') || !email.includes('.')) {
 		
 		document.getElementById('emailError').textContent = 'Please enter a valid email address';
@@ -234,7 +227,7 @@ function validateContactForm() {
 		
 	}
 	
-	// Validate Phone (only if user filled it in)
+	// This ensures a proper phone number is entered (entering a phone number is optional though)
 	if (phone !== '' && !/^[0-9\s\-\+\(\)]+$/.test(phone)) {
 		
 		document.getElementById('phoneError').textContent = 'Please enter a valid phone number';
@@ -243,7 +236,7 @@ function validateContactForm() {
 		
 	}
 	
-	// Validate Message
+	// Validates the message
 	if (message === '') {
 		
 		document.getElementById('messageError').textContent = 'Please enter a message';
@@ -252,11 +245,13 @@ function validateContactForm() {
 		
 	}
 	
-	// Return validation result
+	// Returns validation result
 	return isValid;
 	
 }
-
+	// Pedros product cards on the homepage link here with ?modal=modal1 etc in the URL.
+	//this part below grabs that and opens the right modal automatically so user doesnt have to find it again
+	
 	// Auto-open modal if URL has ?modal=modalX
   const params = new URLSearchParams(window.location.search);
   const modalID = params.get('modal');

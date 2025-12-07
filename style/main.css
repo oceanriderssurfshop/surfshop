@@ -481,7 +481,6 @@ a:hover {
 /* Cian */
 
 /*  MODAL STYLES (for Brands page) */
-
 /* Modal Overlay - dark background that covers the page */
 .modal {
     display: none;
@@ -494,7 +493,7 @@ a:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Modal Content Box - the white popup box */
+/* Modal Content Box. (The white popup box) */
 .modal-content {
     background-color: white;
     margin: 5% auto;
@@ -505,10 +504,10 @@ a:hover {
     max-width: 900px;
     position: relative;
     max-height: 80vh;
-    overflow-y: auto;
+    overflow-y: auto; /* makes it scrollable if there are a lot of products */
 }
 
-/* Close Button - X symbol in top-right corner */
+/* Close Button. x symbol in top right corner */
 .close-btn {
     position: absolute;
     top: 15px;
@@ -521,7 +520,7 @@ a:hover {
 }
 
 .close-btn:hover {
-    color: var(--or-orange);
+    color: var(--or-orange); /* this makes the button turn orange when the cursor hovers over it */
 }
 
 /* Modal title */
@@ -538,7 +537,6 @@ a:hover {
     color: #787878;
 }
 
-/* Product images in modals */
 .product-img {
     width: 100%;
     height: 300px;
@@ -548,7 +546,6 @@ a:hover {
     border: 2px solid #e0e0e0;
 }
 
-/* Product name styling */
 .product-name {
     color: var(--or-blue-dark);
     font-size: 1.2rem;
@@ -556,7 +553,6 @@ a:hover {
     margin-bottom: 10px;
 }
 
-/* Product price styling */
 .product-price {
     color: var(--or-orange);
     font-size: 1.3rem;
@@ -564,7 +560,6 @@ a:hover {
     margin-bottom: 10px;
 }
 
-/* Product description */
 .product-description {
     color: #787878;
     font-size: 0.9rem;
@@ -572,7 +567,6 @@ a:hover {
 }
 
 /* FILTER BUTTONS (for Brands page)*/
-
 /* Filter button styling */
 .filter-btn {
     background-color: var(--or-blue-dark);
@@ -597,15 +591,13 @@ a:hover {
     color: var(--or-blue-dark);
 }
 
-/* FOOTER */
-
-/* Footer Styling */
+/* Footer styling */
 .footer {
 	background-color: #1f4c75;
 	color: white;
 	text-align: center;
 	padding: 30px 0;
-	margin-top: 50px;
+	margin-top: 50px; 
 }
  
 .footer p {

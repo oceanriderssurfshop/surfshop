@@ -5,7 +5,7 @@ Date: 13/11/2025
 File: cianstyle.css
 */
 
-/* Full-width surfboard background on entire page */
+/* Full width surfboard background on entire page */
 body {
 	
 	background-image: url('../pictures/surfboard-background.jpg');
@@ -14,7 +14,7 @@ body {
 	
 	background-position: center;
 	
-	background-attachment: fixed;
+	background-attachment: fixed; /*this keeps the background image on the screen when scrolling. Nice feature to have */
 	
 	position: relative;
 	
@@ -34,13 +34,13 @@ body::before {
 	
 	bottom: 0;
 	
-	background-color: rgba(255, 255, 255, 0.30);
+	background-color: rgba(255, 255, 255, 0.30); /* I did this to give it a white overlay because the text was difficult to read with the colourful background */
 	
 	z-index: -1;
 	
 }
 
-/* Navbar with solid white background - no image showing through */
+/* Navbar with solid white background. No image showing through */
 .navbar {
 	
 	background-color: white;
@@ -171,7 +171,7 @@ body::before {
 	
 }
 
-/* Card hover effect - lifts up with shadow */
+/* Card hover effect.Lifts up and gives it a shadow */
 .card:hover {
 	
 	transform: translateY(-5px);
@@ -181,28 +181,26 @@ body::before {
 	border-color: #e48e41;
 }
 
-/* Background color for surfboard cards */
+/* Background colours for cards */
 .brand-card[data-category="surfboards"] .card {
 	
 	background-color: #FFFEF5;
 	
 }
 
-/* Background color for wetsuit cards */
 .brand-card[data-category="wetsuits"] .card {
 	
 	background-color: #F0FBFC;
 	
 }
 
-/* Background color for clothing cards */
 .brand-card[data-category="clothing"] .card {
 	
 	background-color: #FFF5F3;
 	
 }
 
-/* Card body padding and alignment */
+/* Card body with padding and alignment */
 .card-body {
 	
 	padding: 25px;
@@ -215,7 +213,7 @@ body::before {
 	
 }
 
-/* Brand header container - logo and name centered side by side */
+/* Brand header container. Logo and name centered side by side */
 .brand-header {
 	
 	display: flex;
@@ -347,7 +345,7 @@ body::before {
 	
 }
 
-/* Modal Overlay */
+/* Modal overlay */
 .modal {
 	
 	display: none;
@@ -388,11 +386,11 @@ body::before {
 	
 	max-height: 80vh;
 	
-	overflow-y: auto;
+	overflow-y: auto; /* This makes it scrollable if there are a lot of products */
 	
 }
 
-/* Close Button - X symbol positioned in top-right corner */
+/* Close Button. The x symbol gets positioned in the top right corner */
 .close-btn {
 	
 	position: absolute;
@@ -433,7 +431,7 @@ body::before {
 	
 }
 
-/* Modal body content */
+
 .modal-body {
 	
 	text-align: center;
@@ -442,7 +440,7 @@ body::before {
 	
 }
 
-/* Product images in modals */
+/* Product images in the modals */
 .product-img {
 	
 	width: 100%;
@@ -459,7 +457,7 @@ body::before {
 	
 }
 
-/* Product name styling */
+/* Product styling */
 .product-name {
 	
 	color: #1f4c75;
@@ -472,7 +470,7 @@ body::before {
 	
 }
 
-/* Product price styling */
+
 .product-price {
 	
 	color: #e48e41;
@@ -485,7 +483,7 @@ body::before {
 	
 }
 
-/* Product description */
+
 .product-description {
 	
 	color: #787878;
@@ -517,7 +515,7 @@ h2 {
 	
 	text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.9), -2px -2px 4px rgba(255, 255, 255, 0.9);
 	
-	-webkit-text-stroke: 1px white;
+	-webkit-text-stroke: 1px white; /* This was used here because again the text was difficult to read on the background image */
 	
 }
 
@@ -549,7 +547,7 @@ h2 {
 	
 }
 
-/* Input fields and textarea */
+/* Input fields and text area */
 .form-control {
 	
 	width: 100%;
@@ -566,7 +564,7 @@ h2 {
 	
 }
 
-/* Input focus state - when user clicks in field */
+/* This gives the input field a blue border when clicked on making it look more aesthetic */
 .form-control:focus {
 	
 	outline: none;
@@ -615,7 +613,7 @@ h2 {
 	
 }
 
-/* Submit button hover effect */
+/* This makes the submit button turn orange and also a tiny bit bigger when its hovered over by the cursor */
 .submit-btn:hover {
 	
 	background-color: #e48e41;
@@ -626,7 +624,7 @@ h2 {
 	
 }
 
-/* Error messages */
+/* Error message styling */
 .error-message {
 	
 	display: block;
@@ -665,7 +663,6 @@ h2 {
 	
 }
 
-/* Info item headings */
 .info-item h3 {
 	
 	color: #e48e41;
@@ -678,7 +675,6 @@ h2 {
 	
 }
 
-/* Info item text */
 .info-item p {
 	
 	color: #787878;
@@ -702,7 +698,7 @@ h2 {
 	
 }
 
-/* Link hover effect */
+/* Hover effect again here */
 .info-item a:hover {
 	
 	color: #e48e41;

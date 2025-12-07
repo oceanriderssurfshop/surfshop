@@ -62,7 +62,7 @@
 	<div class="row mb-4">
 	
 		<div class="col-md-8 mx-auto">
-		
+			<!-- the onkeyup here means that the search runs automatically when the user types a letter and not just when they hit enter. I thought this was a nice feature to put in -->
             <input type="text" id="searchBar" class="form-control" placeholder="Search for brands..." onkeyup="searchBrands()">
 			
         </div>
@@ -92,7 +92,8 @@
 
         <!-- Brand 1 -->
         <div class="col-12 col-sm-6 col-md-4">
-		<div class="brand-card" data-category="surfboards" onclick="showModal('modal1')" style="cursor: pointer;">
+		<!-- I added cursor pointer below so that the user knows the card is clickable -->
+		<div class="brand-card" data-category="surfboards" onclick="showModal('modal1')" style="cursor: pointer;"> <!-- data-category here is used by the filter buttons in Javascript -->
             <img src="../pictures/wave-warrior-logo.png" alt="Wave Warrior logo">
             <h3 class="card-title brand-name">Wave Warrior</h3>
             <p class="card-text">Performance surfboards for all skill levels.</p>
@@ -156,16 +157,16 @@
 	
 		<div class="modal-content">
 		
-			<span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+			<span class="close-btn" onclick="closeModal('modal1')">&times;</span> <!-- this &times it what gives it the x symbol -->
 			
 			<h2>Wave Warrior Products</h2>
 			
 			<div class="modal-body">
-			
+				
 				<div class="row">
 				
 					<!-- Product 1: Classic Shortboard -->
-					<div class="col-md-6 mb-4">
+					<div class="col-md-6 mb-4"> <!-- col-md-6 puts two products together side by side on bigger screens and stacks on mobile -->
 					
 						<img src="../pictures/wave-warrior-2.jpg" alt="Classic Shortboard" class="product-img">
 						
